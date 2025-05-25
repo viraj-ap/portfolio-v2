@@ -18,10 +18,10 @@ export function NavbarMain() {
   const navItems = [
     {
       name: "Experience",
-      link: "#features",
+      link: "",
     },
     {
-      name: "Pricing",
+      name: "Projects",
       link: "#pricing",
     },
     {
@@ -47,8 +47,10 @@ export function NavbarMain() {
               <ModeToggle />
             </NavbarButton>
             <NavbarButton onClick={handleGithubClick}>
-              <Github className="h-5 w-5" />
-              <span className="font-bold">Github</span>
+              <div className="flex items-center justify-center">
+                <Github className="h-5 w-5 mr-2" />
+                <div>Github</div>
+              </div>
             </NavbarButton>
           </div>
         </NavBody>
@@ -89,8 +91,10 @@ export function NavbarMain() {
                 variant="primary"
                 className="w-full"
               >
-                <Github className="h-5 w-5 mr-2" />
-                Github
+                <div className="flex items-center justify-center">
+                  <Github className="h-5 w-5 mr-2" />
+                  <div>Github</div>
+                </div>
               </NavbarButton>
             </div>
           </MobileNavMenu>
