@@ -13,6 +13,18 @@ const TerminalAuth: React.FC<TerminalAuthProps> = ({ className = "" }) => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState([
     { text: "Hey there! type help to get started.", color: "text-gray-500" },
+    { text: "Available commands:", color: "text-[#00FFFF]" },
+    { text: "- about: Who am I?", color: "text-[#00FFFF]" },
+    { text: "- contact: How to reach me", color: "text-[#00FFFF]" },
+    { text: "- resume: Get my resume", color: "text-[#00FFFF]" },
+    { text: "- theme: Toggle theme", color: "text-[#00FFFF]" },
+    { text: "- clear : clear the terminal", color: "text-[#00FFFF]" },
+    { text: "- sudo : try it out!", color: "text-[#00FFFF]" },
+    { text: "- matrix : experience the matrix", color: "text-[#00FFFF]" },
+    { text: "- history : view command history", color: "text-[#00FFFF]" },
+    { text: "- linkedin : open LinkedIn", color: "text-[#00FFFF]" },
+    { text: "- github : open GitHub", color: "text-[#00FFFF]" },
+    { text: "- reload : reload this terminal", color: "text-[#00FFFF]" },
   ]);
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -37,18 +49,24 @@ const TerminalAuth: React.FC<TerminalAuthProps> = ({ className = "" }) => {
       case "help":
         setOutput((prev) => [
           ...prev,
-          { text: "Available commands:", color: "text-purple-400" },
-          { text: "- about: Who am I?", color: "text-purple-400" },
-          { text: "- contact: How to reach me", color: "text-purple-400" },
-          { text: "- resume: Get my resume", color: "text-purple-400" },
-          { text: "- theme: Toggle theme", color: "text-purple-400" },
-          { text: "- clear : clear the terminal", color: "text-purple-400" },
-          { text: "- sudo : try it out!", color: "text-purple-400" },
-          { text: "- matrix : experience the matrix", color: "text-purple-400" },
-          { text: "- history : view command history", color: "text-purple-400" },
-          { text: "- linkedin : open LinkedIn", color: "text-purple-400" },
-          { text: "- github : open GitHub", color: "text-purple-400" },
-          { text: "- reload : reload this terminal", color: "text-purple-400" },
+          { text: "Available commands:", color: "text-[#00FFFF]" },
+          { text: "- about: Who am I?", color: "text-[#00FFFF]" },
+          { text: "- contact: How to reach me", color: "text-[#00FFFF]" },
+          { text: "- resume: Get my resume", color: "text-[#00FFFF]" },
+          { text: "- theme: Toggle theme", color: "text-[#00FFFF]" },
+          { text: "- clear : clear the terminal", color: "text-[#00FFFF]" },
+          { text: "- sudo : try it out!", color: "text-[#00FFFF]" },
+          {
+            text: "- matrix : experience the matrix",
+            color: "text-[#00FFFF]",
+          },
+          {
+            text: "- history : view command history",
+            color: "text-[#00FFFF]",
+          },
+          { text: "- linkedin : open LinkedIn", color: "text-[#00FFFF]" },
+          { text: "- github : open GitHub", color: "text-[#00FFFF]" },
+          { text: "- reload : reload this terminal", color: "text-[#00FFFF]" },
         ]);
         break;
 
@@ -65,9 +83,18 @@ const TerminalAuth: React.FC<TerminalAuthProps> = ({ className = "" }) => {
       case "contact":
         setOutput((prev) => [
           ...prev,
-          { text: "📧 Email: viraj25092004@gmail.com", color: "text-green-300" },
-          { text: "🔗 GitHub: https://github.com/viraj-ap", color: "text-green-300" },
-          { text: "💼 LinkedIn: https://linkedin.com/in/viraj-ap", color: "text-green-300" },
+          {
+            text: "📧 Email: viraj25092004@gmail.com",
+            color: "text-green-300",
+          },
+          {
+            text: "🔗 GitHub: https://github.com/viraj-ap",
+            color: "text-green-300",
+          },
+          {
+            text: "💼 LinkedIn: https://linkedin.com/in/viraj-ap",
+            color: "text-green-300",
+          },
         ]);
         break;
 
@@ -162,7 +189,10 @@ const TerminalAuth: React.FC<TerminalAuthProps> = ({ className = "" }) => {
         setOutput((prev) => [
           ...prev,
           { text: `Command not recognized: ${cmd}`, color: "text-red-400" },
-          { text: 'Please type "help" for more details.', color: "text-gray-500" },
+          {
+            text: 'Please type "help" for more details.',
+            color: "text-gray-500",
+          },
         ]);
     }
   };
@@ -185,12 +215,22 @@ const TerminalAuth: React.FC<TerminalAuthProps> = ({ className = "" }) => {
   };
 
   return (
-    <div className={`terminal p-5 rounded-lg font-mono md:w-[50vw] ${className}`}>
+    <div
+      className={`terminal p-5 rounded-lg font-mono md:w-[50vw] mt-20 ${className}`}
+    >
       <div className="terminal-header bg-zinc-700 text-white p-2 rounded-t-lg flex items-center">
-        <span className="text-red-500 text-5xl leading-[0px] align-middle -mt-2">•</span>
-        <span className="text-yellow-500 text-5xl leading-[0px] align-middle -mt-2 ml-1">•</span>
-        <span className="text-green-500 text-5xl leading-[0px] align-middle -mt-2 ml-1">•</span>
-        <span className="ml-4 align-baseline">Hey there, Welcome to my Portfolio --bash</span>
+        <span className="text-red-500 text-5xl leading-[0px] align-middle -mt-2">
+          •
+        </span>
+        <span className="text-yellow-500 text-5xl leading-[0px] align-middle -mt-2 ml-1">
+          •
+        </span>
+        <span className="text-green-500 text-5xl leading-[0px] align-middle -mt-2 ml-1">
+          •
+        </span>
+        <span className="ml-4 align-baseline">
+          Hey there, Welcome to my Portfolio --bash
+        </span>
       </div>
 
       <div
