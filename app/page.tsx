@@ -15,14 +15,13 @@ export default function Home() {
       </div>
 
       <div>
-        <Waves/>
+        <Waves />
       </div>
 
-      <div className="flex items-center justify-around mt-20">
+      <div className="flex items-center justify-around">
         <div>
           <TerminalAuth />
         </div>
-       
       </div>
 
       <div>

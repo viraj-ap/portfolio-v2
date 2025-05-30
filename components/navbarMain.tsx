@@ -18,11 +18,11 @@ export function NavbarMain() {
   const navItems = [
     {
       name: "Experience",
-      link: "",
+      link: "#experience",
     },
     {
       name: "Projects",
-      link: "#pricing",
+      link: "#projects",
     },
     {
       name: "Contact",
@@ -36,12 +36,49 @@ export function NavbarMain() {
     window.open("https://github.com/viraj-ap", "_blank", "noopener,noreferrer");
   };
 
+  const handleScrollToSection = (sectionId: string) => {
+    const id = sectionId.replace('#', '');
+    const element = document.getElementById(id);
+    
+    if (element) {
+      const yOffset = -80; // Adjust this value based on your navbar height
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      
+      window.scrollTo({
+      top: y,
+      behavior: 'smooth'  
+      });
+    }
+  };
+
+  const handleNavItemClick = (link: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    if (link.startsWith('#')) {
+      handleScrollToSection(link);
+    }
+  };
+
+  const handleMobileNavItemClick = (link: string) => {
+    setIsMobileMenuOpen(false);
+    if (link.startsWith('#')) {
+      // Small delay to allow mobile menu to close before scrolling
+      setTimeout(() => {
+        handleScrollToSection(link);
+      }, 100);
+    }
+  };
+
   return (
     <div className="relative w-full">
       <Navbar>
         <NavBody>
           <NavbarLogo />
-          <NavItems items={navItems} />
+          <NavItems 
+            items={navItems.map(item => ({
+              ...item,
+              onClick: (e: React.MouseEvent) => handleNavItemClick(item.link, e)
+            }))}
+          />
           <div className="flex items-center gap-4">
             <NavbarButton variant="secondary">
               <ModeToggle />
@@ -69,16 +106,15 @@ export function NavbarMain() {
             onClose={() => setIsMobileMenuOpen(false)}
           >
             {navItems.map((item, idx) => (
-              <a
+              <button
                 key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300"
+                onClick={() => handleMobileNavItemClick(item.link)}
+                className="relative text-neutral-600 dark:text-neutral-300 text-left w-full p-2 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
               >
                 <span className="block">{item.name}</span>
-              </a>
+              </button>
             ))}
-            <div className="flex w-full flex-col gap-4">
+            <div className="flex w-full flex-col gap-4 mt-4">
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"

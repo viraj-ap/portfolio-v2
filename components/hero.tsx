@@ -4,7 +4,7 @@ import { WavyBackground } from "./ui/wavy-background";
 
 export function Waves() {
   return (
-    <WavyBackground className="max-w-4xl mx-auto pb-40">
+    <WavyBackground className="max-w-4xl mx-auto pb-24">
       <p className="text-2xl md:text-4xl lg:text-7xl text-black dark:text-white font-bold inter-var text-center">
         Hi there, I'm <span className="text-[#00FFFF]">Viraj</span>
       </p>

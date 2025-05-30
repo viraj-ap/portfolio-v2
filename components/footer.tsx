@@ -1,6 +1,4 @@
 import React from "react";
-// import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { Github } from "lucide-react";
 import { Linkedin } from "lucide-react";
 import { Dock } from "./dock";
 
@@ -8,12 +6,12 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="relative text-white"
+      className="relative"
       style={{
         width: "80vw",
         margin: "0 auto",
         background:
-          "linear-gradient(to bottom, rgba(72, 0, 130, 1), rgba(0, 0, 0, 0))",
+          "linear-gradient(to bottom, rgba(0, 188, 212, 1), rgba(0, 0, 0, 0))",
         borderTopLeftRadius: "2rem",
         borderTopRightRadius: "2rem",
       }}
@@ -22,8 +20,8 @@ const Footer = () => {
         <div className="flex items-center justify-center">
           <img className="h-12" src="./logo_nobg.png" alt="" />
         </div>
-        <h2 className="text-2xl font-bold">Contact Me</h2>
-        <h2 className="text-sm font-bold mb-4"> a dm wont hurt :) </h2>
+        <h2 className="text-2xl font-bold dark:text-white text-gray-800">Contact Me</h2>
+        <h2 className="text-sm font-bold mb-4 dark:text-white text-gray-800"> a dm wont hurt :) </h2>
 
         <div className="flex justify-center space-x-8 text-3xl mb-6">
           <Dock />
@@ -31,7 +29,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className=" text-center text-white font-bold mb-12">
+      <div className="text-center font-bold mb-12 dark:text-white text-gray-800">
         <p>Made with ❤️ by Viraj</p>
       </div>
 

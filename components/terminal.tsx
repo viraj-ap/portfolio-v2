@@ -216,26 +216,26 @@ const TerminalAuth: React.FC<TerminalAuthProps> = ({ className = "" }) => {
 
   return (
     <div
-      className={`terminal p-5 rounded-lg font-mono md:w-[50vw] mt-20 ${className}`}
+      className={`terminal p-5 rounded-lg font-mono md:w-[50vw] ${className} mb-12`}
     >
       <div className="terminal-header bg-zinc-700 text-white p-2 rounded-t-lg flex items-center">
-        <span className="text-red-500 text-5xl leading-[0px] align-middle -mt-2">
+        <span className="text-red-500 text-5xl leading-[0px] align-middle mt-2">
           •
         </span>
-        <span className="text-yellow-500 text-5xl leading-[0px] align-middle -mt-2 ml-1">
+        <span className="text-yellow-500 text-5xl leading-[0px] align-middle mt-2 ml-1">
           •
         </span>
-        <span className="text-green-500 text-5xl leading-[0px] align-middle -mt-2 ml-1">
+        <span className="text-green-500 text-5xl leading-[0px] align-middle mt-2 ml-1">
           •
         </span>
-        <span className="ml-4 align-baseline">
+        <span className="ml-4 text-xs mt-1 align-baseline">
           Hey there, Welcome to my Portfolio --bash
         </span>
       </div>
 
       <div
         ref={outputRef}
-        className="pl-4 pt-2 bg-black max-h-[500px] overflow-auto text-sm"
+        className="pl-4 pt-2 bg-black max-h-[500px] overflow-auto text-xs mt-2"
         id="output"
       >
         {output.map((line, index) => (
@@ -254,7 +254,7 @@ const TerminalAuth: React.FC<TerminalAuthProps> = ({ className = "" }) => {
           <span className="text-sky-300 ml-2 font-bold">~</span>
           <input
             ref={inputRef}
-            className="bg-transparent border-none outline-none ring-0 focus:ring-0 text-amber-400 w-full ml-2 font-bold caret-amber-400"
+            className="bg-transparent text-xs border-none outline-none ring-0 focus:ring-0 text-amber-400 w-full ml-2 font-bold caret-amber-400"
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -263,6 +263,9 @@ const TerminalAuth: React.FC<TerminalAuthProps> = ({ className = "" }) => {
           />
         </div>
       </form>
+      <div className="text-[10px] dark:text-white mt-2">
+        try it out! this is a working terminal :)
+      </div>
     </div>
   );
 };

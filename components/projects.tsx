@@ -29,7 +29,7 @@ const projects = [
 export const Projects = () => {
   return (
     <section id="projects" className="p-4 md:p-8">
-      <div className="text-violet-300 text-5xl font-bold text-center mt-12">
+      <div className="text-[#00FFFF] text-5xl font-bold text-center mt-12">
         Projects
       </div>
       <div className="mx-auto max-w-5xl">
@@ -97,7 +97,7 @@ const ProjectLink: React.FC<ProjectProps> = React.memo(
               staggerChildren: 0.075,
               delayChildren: 0.25,
             }}
-            className="relative z-10 block text-4xl font-bold text-violet-600 transition-colors duration-500 group-hover:text-green-300 md:text-6xl"
+            className="relative z-10 block text-4xl font-bold text-[#00FFFF] transition-colors duration-500 group-hover:text-violet-500 md:text-6xl"
           >
             {heading.split("").map((l, i) => (
               <motion.span
